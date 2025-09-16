@@ -12,5 +12,27 @@ class Cachorro extends Animal{
         super(nome);
         this.raca = raca;
     }
+
+    fazerSom(){
+        console.log(`${this.nome} raça: ${this.raca} está latindo: Au Au`);
+    }
 }
 
+class Gato extends Animal{
+    constructor(nome, cor){
+        super(nome);
+        this.cor = cor;
+    }
+
+    fazerSom(){
+        console.log(`${this.nome} da cor: ${this.cor} está miando: Miau`);
+    }
+}
+
+const animal = new Animal("Bicho");
+const cachorro = new Cachorro("Zick", "Gordo");
+const gato = new Gato("Iagozada", "Marrom BomBom")
+
+animal.fazerSom()
+cachorro.fazerSom()
+gato.fazerSom()
