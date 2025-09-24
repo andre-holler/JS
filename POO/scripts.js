@@ -1,38 +1,50 @@
-class Animal{
+class Esporte{
     constructor(nome){
-        this.nome = nome;
-    }
-    fazerSom(){
-        console.log(`${this.nome} está fazendo um som...`);
-    }
-}
-
-class Cachorro extends Animal{
-    constructor(nome, raca){
-        super(nome);
-        this.raca = raca;
+        this.nome = nome
     }
 
-    fazerSom(){
-        console.log(`${this.nome} raça: ${this.raca} está latindo: Au Au`);
+    jogar(){
+        console.log(`O esporte ${this.nome} está sendo praticado`)
     }
 }
 
-class Gato extends Animal{
-    constructor(nome, cor){
-        super(nome);
-        this.cor = cor;
+class Futebol extends Esporte{
+    constructor(nome, jogadores){
+        super(nome), 
+        this.jogadores = jogadores
     }
 
-    fazerSom(){
-        console.log(`${this.nome} da cor: ${this.cor} está miando: Miau`);
+    jogar(){
+        console.log(`O jogo de futebol X está sendo jogado com ${this.jogadores} jogadores em campo`)
     }
 }
 
-const animal = new Animal("Bicho");
-const cachorro = new Cachorro("Zick", "Gordo");
-const gato = new Gato("Iagozada", "Marrom BomBom")
+class Basquete extends Esporte{
+    constructor(nome, pontos){
+        super(nome),
+        this.pontos = pontos
+    }
 
-animal.fazerSom()
-cachorro.fazerSom()
-gato.fazerSom()
+    jogar(){
+        console.log(`O jogo de basquete x está com pontos marcados até agora`)
+    }
+}
+
+class Tenis extends Esporte{
+    constructor(nome, sets){
+        super(nome),
+        this.sets = sets
+    }
+
+    jogar(){
+        console.log(`O jogo de tênis x está no set número ${this.sets}`)
+    }
+}
+
+const fut = new Futebol('fut', 22)
+const bqt = new Basquete('bqt', 67)
+const tns = new Tenis('tns', 2)
+
+fut.jogar()
+bqt.jogar()
+tns.jogar()
